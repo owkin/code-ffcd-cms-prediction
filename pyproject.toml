@@ -1,0 +1,38 @@
+[project]
+name = "cms_prediction"
+description = "Code to retrain CMS classification model"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+    { name = "Jean-Eudes Le Douget", email = "jean-eudes.le-douget@owkin.com" },
+    { name = "Paul Jacob", email = "paul.jacobperon@rocketmail.com"}
+]
+dynamic = ["version"]
+dependencies = [
+    "tqdm",
+    "pandas>=2.0",
+    "numpy",
+    "scikit-learn",
+    "torch"
+]
+
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.13.0",
+]
+
+[tool.ruff.lint]
+extend-select = [
+  "UP",  # pyupgrade
+  "D",   # pydocstyle
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+[tool.ruff.format]
+docstring-code-format = true
